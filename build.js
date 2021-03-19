@@ -93,7 +93,7 @@ const cdnScriptsStyled = [
 ];
 
 const cdnScriptsStandard = [
-    "stock/{{version}}/highstock.js",
+    //"stock/{{version}}/highstock.js",
     "{{version}}/highcharts-more.js",
     "{{version}}/modules/exporting.js"
 ];
@@ -238,16 +238,6 @@ function embed(version, scripts, out, fn, optionals) {
             console.log('  ', (fullURL).gray);
 
             const handleScript = (error, body) => {
-
-                // if ((error || body.trim().indexOf('<!DOCTYPE') === 0)) {
-                //   console.log(optionals, scriptOriginal);
-                //   if (optionals[scriptOriginal]) {
-                //     console.log(`  notice: ${script} is not available for v${version}, skipped.`.yellow)
-                    // return next();
-                  // }
-                  // return next(error, fullURL);
-                // }
-
                 if ((body || '').trim().indexOf('<!DOCTYPE') === 0) {
                   if (optionals[scriptOriginal]) {
                     console.log(`   ${script.substr(script.lastIndexOf('/') + 1)} is not available for v${version}, skipped..`.yellow);
@@ -315,7 +305,7 @@ function endMsg() {
 }
 
 function embedAll(version, includeStyled, includeMaps, includeMoment, includeGantt, optionals) {
-    var standard = cdnScriptsStandard.concat(cdnScriptsCommon).concat(cdnAdditional),
+    var standard = cdnScriptsStandard, //.concat(cdnScriptsCommon).concat(cdnAdditional),
         styled = cdnScriptsStyled.concat(cdnScriptsCommon).concat(cdnAdditional)
     ;
 
