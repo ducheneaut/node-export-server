@@ -93,7 +93,7 @@ const cdnScriptsStyled = [
 ];
 
 const cdnScriptsStandard = [
-    //"stock/{{version}}/highstock.js",
+    "stock/{{version}}/highstock.js",
     "{{version}}/highcharts-more.js",
     "{{version}}/modules/exporting.js"
 ];
