@@ -33,7 +33,6 @@ const request = require('request');
 const async = require('async');
 const path = require('path');
 const template = fs.readFileSync(__dirname + '/phantom/template.html').toString();
-const package = require(__dirname + '/package.json');
 
 let npmLocation = __dirname + '/node_modules/highcharts/';
 
@@ -83,7 +82,8 @@ const cdnScriptsCommon = [
     "{{version}}/modules/funnel.js",
     "{{version}}/modules/solid-gauge.js",
     "{{version}}/modules/heatmap.js",
-    "{{version}}/modules/treemap.js"
+    "{{version}}/modules/treemap.js",
+    "{{version}}/modules/exporting.js"
 ].concat(Object.keys(cdnScriptsOptional));
 
 const cdnScriptsStyled = [
@@ -95,7 +95,6 @@ const cdnScriptsStyled = [
 const cdnScriptsStandard = [
     "stock/{{version}}/highstock.js",
     "{{version}}/highcharts-more.js",
-    "{{version}}/modules/exporting.js"
 ];
 
 const cdnLegacy = [
