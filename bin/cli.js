@@ -189,7 +189,6 @@ addOption(
 
 function printLogo() {
   if (options.nologo) {
-    console.log(`starting highcharts export server v${pkg.version}...`);
     return;
   }
 
